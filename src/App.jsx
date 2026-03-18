@@ -7,6 +7,11 @@ import ProductDetail from './pages/ProductDetail';
 import WhatsAppButton from './components/WhatsAppButton';
 import { CartProvider } from './context/CartContext';
 
+import AboutUs from './pages/AboutUs';
+import Location from './pages/Location';
+import DesignManufacturing from './pages/DesignManufacturing';
+import ShippingPolicy from './pages/ShippingPolicy';
+
 function App() {
   return (
     <CartProvider>
@@ -17,6 +22,10 @@ function App() {
             <Routes>
               <Route path="/" element={<Catalog />} />
               <Route path="/product/:id" element={<ProductDetail />} />
+              <Route path="/sobre-nosotros" element={<AboutUs />} />
+              <Route path="/ubicacion" element={<Location />} />
+              <Route path="/diseno-fabricacion" element={<DesignManufacturing />} />
+              <Route path="/politica-envios" element={<ShippingPolicy />} />
             </Routes>
           </main>
           <Footer />

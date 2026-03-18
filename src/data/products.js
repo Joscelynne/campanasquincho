@@ -9,42 +9,42 @@ export const products = [
   },
   {
     id: 2,
-    name: 'Vulcan Grill 90',
-    price: '$2,890',
+    name: 'Campana tipo 2',
+    price: '$300.000',
     desc: 'Reinforced refractory brick interior with adjustable grill height mechanism.',
     image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDRqsO8oCKdA-96MRnneT6gU_dwWmLVRXiD19YT1iEwrGueWLV3Z-GkM_7zIcgT-GBHlSp_9shYHGtRt9outQrXU_wYmNJ8hUF92Les2YFwJQk9M9miJ4UL4U20TnBoASwG5_UqiDvvV12VsmhEhSqXbeuPaLp_7CNDt6eztOSSMdrIYSgfa8mbJl8klPsdth_vbJ6GE8UOuXolvwIsOMW1Ej8U6GEnRhRVzl1fkb65AhJAx7URXZokuAtiFYGucHk02-iAEjkxI8FA',
     badge: 'Charcoal Series'
   },
   {
     id: 3,
-    name: 'Copper Artisan 120',
-    price: '$4,500',
+    name: 'Campana sencilla',
+    price: '$100.000',
     desc: 'Hand-hammered natural copper hood with industrial extraction capacity.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBWzOKVglFXyiRbtMNBGElMMx2FeFfdlqt9fh-dT_l9fYptvvVjHgqTtrSh5kK5iuIXvKlwc8NIhbOwJbH0rE20GI0xl7sImbcWoCggTUVO127pUzaR9DaB3U743uL8_ofoYUWKuxvGRGH1R-FG5YHeTGnfvC-9_0po2AQY8V4u0SjDsFXrER9cnvZQhL_-eVb_8x2fahc_Ox1AD2ervptexRvJbQIBCneJVGkwr9AmBjdV1pr_EOKJay51yctt7Fzb_tzjsJTfyrD1',
+    image: 'https://web.whatsapp.com/c6f6bc08-f20e-4ec7-a3a3-b8b77e65eb56',
     badge: 'Heritage Edition'
   },
   {
     id: 4,
-    name: 'Infinity BBQ Station',
-    price: '$5,750',
-    desc: 'Complete outdoor cooking island with prep areas and integrated storage.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAvNZj2J1qZ4TrERpDs-n2yKjjaHzJdpem-0eSTt7RXGi1tkDjhQUvGgXWNPH7Sql0PQaoTcJS4Nsh5ACt7J7xYIJjDPjdnJo5y622l0hi_XGhFrkleypXN4wvKOs5CJJRuNMgDFrprjEH71ojdcLo6g_DEydm9sRv446jUQLarAHeD4Y_WKC3ZZDRFO3BfHyqEZu0nXuCavKfGV1nsuAY_xh-1Gy67mHVkUrPTYefsYWqhPkNBuhggHmMAS4BtXwib0CvFDOLHYi4M',
+    name: 'kit de chimenea de acero inoxidable',
+    price: '$50.000',
+    desc: 'incluye 5 piezas auto-ensamblables: un codo de 50 cm, un tubo de 90 cm, dos tubos de 1 metro cada uno y un sombrero chino fijo',
+    image: 'https://ai-toolkit-generations.imgix.net/content/-e-x-t-e-r-n-a-l_-i-m-a-g-e_-t-o_-i-m-a-g-e-v1/media__3/image-2becad1c-e353-4c81-85af-47983de3d520.png?auto=format%2Ccompress&cs=srgb&w=1440&fit=max&s=5ca77e501ff826e31c6623ff1a9c8a02',
     badge: 'Built-in'
   },
   {
     id: 5,
-    name: 'Shadow Wood Grill',
-    price: '$3,200',
-    desc: 'Matte black heat-resistant finish with premium teak handle and side tables.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDAyxkb5j7YMZ42-NXJx6-A0GLFhdZFEmF3i-Ao-DlJV7ZFmnen2c_LwTPik3x7dqcjsiaNXdaRn-i0IdvskF-06hZ6cmOeK7XHDZYkKVFCTlNOQ4fPSlWMbE4QrJtzD2rm65kns8G_41h3_bDeTT6ktlyChISyipQRrHIJqu1nDc_iWAeVXSjavrsDkQ-Fdj670818M0NbWhGlQwMaZ7HdGYuLlCRvPsXmCGFcqCQj-MV1T-maL3CemJsLV7KytI69qOkh69BqHrpS',
+    name: 'codo de ventilación galvanizado',
+    price: '$80.000',
+    desc: 'comúnmente utilizado en sistemas de calefacción como salamandras o estufas a leña para desviar la trayectoria de los gases de combustión.',
+    image: 'https://ai-toolkit-generations.imgix.net/content/-e-x-t-e-r-n-a-l_-i-m-a-g-e_-t-o_-i-m-a-g-e-v1/media__10/image-4d1a355f-17c6-4ab5-8dfd-660132c0e5bf.png?auto=format%2Ccompress&cs=srgb&w=1440&fit=max&s=f77d00f4a7067b38e38c68fc23398fc2',
     badge: 'Custom'
   },
   {
     id: 6,
-    name: 'Elite Toolset (8pcs)',
-    price: '$450',
-    desc: 'Forged stainless steel tools with personalized leather storage roll.',
-    image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDCnbTZ0pWHUzB9pFQcqE3f-_uXc4cwQqf3vcdnHw78iK5WoQFFV7mOrqgYgJSgxPwNT4LSY4FaEuro1_t4Tf_drzX0Fh6Opx-WsTh0H4c3_UkB3nfiZwn8fWZomc2blJK38DDtaQniHKJgW-dN27flrBh3Gt3jYjgJ_FkO3PP07EltMrqTP6cMRMw2fPXXNObCxkDaGY-FhSZS4ciNayuX0hzCLN-OF5joD3ZlvXHmwXO8QbghNLy8ntZfn-bduXRdVUG9NC1EZqNZ',
+    name: 'codo de ventilación galvanizado',
+    price: '$80.000',
+    desc: 'comúnmente utilizado en sistemas de calefacción como salamandras o estufas a leña para desviar la trayectoria de los gases de combustión.',
+    image: 'https://ai-toolkit-generations.imgix.net/content/-e-x-t-e-r-n-a-l_-i-m-a-g-e_-t-o_-i-m-a-g-e-v1/media__7/image-5da28c21-c19d-4073-8f52-625d0f1e3026.png?auto=format%2Ccompress&cs=srgb&w=1440&fit=max&s=7a153f00bee5bba957a0d78e226d2499',
     badge: 'Accessories'
   }
 ];
