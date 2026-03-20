@@ -41,7 +41,7 @@ export const products = [
   },
   {
     id: 6,
-    name: 'codo de ventilación galvanizado',
+    name: 'tolva vertical',
     price: '$80.000',
     desc: 'comúnmente utilizado en sistemas de calefacción como salamandras o estufas a leña para desviar la trayectoria de los gases de combustión.',
     image: 'https://ai-toolkit-generations.imgix.net/content/-e-x-t-e-r-n-a-l_-i-m-a-g-e_-t-o_-i-m-a-g-e-v1/media__7/image-5da28c21-c19d-4073-8f52-625d0f1e3026.png?auto=format%2Ccompress&cs=srgb&w=1440&fit=max&s=7a153f00bee5bba957a0d78e226d2499',

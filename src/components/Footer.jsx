@@ -17,10 +17,10 @@ const Footer = () => {
         <div className="footer-col">
           <h4 className="footer-title">Productos y Servicios</h4>
           <ul className="footer-links">
-            <li><Link to="/">Extraction Hoods</Link></li>
-            <li><Link to="/">Charcoal Grills</Link></li>
-            <li><Link to="/">Electric Rotisseries</Link></li>
-            <li><Link to="/">Custom Projects</Link></li>
+            <li><Link to="/">kit de chimenea de acero inoxidable</Link></li>
+            <li><Link to="/">codo de ventilación galvanizado</Link></li>
+            <li><Link to="/">tolva vertical</Link></li>
+            <li><Link to="/">sombrero chino</Link></li>
           </ul>
         </div>
 
