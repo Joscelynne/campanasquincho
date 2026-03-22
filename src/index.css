@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
 
 :root {
-  --color-primary: #ec9213;
+  --color-primary: #ecd613;
   --color-primary-hover: rgba(236, 52, 19, 0.9);
   --color-primary-light: rgba(0, 0, 0, 0.1);
   --color-bg-dark: #111111;
@@ -26,6 +26,32 @@ body {
   color: var(--color-text-light);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+
+  /* Nuevo fondo: Placa metálica oscura con un perno centrado oscurecido */
+  background-image:
+    /* 1. Gradiente superior (oscurece TODAS las capas debajo por igual) */
+    linear-gradient(rgba(17, 17, 17, 0.479), rgba(17, 17, 17, 0.95)),
+    /* 2. Perno centrado y grande */
+    url('https://scdn.autodoc.de/catalog/categories/600x600/74851.png'),
+    /* 3. Fondo metálico base */
+    url('https://http2.mlstatic.com/D_NQ_NP_668099-MLA53101066919_122022-O.webp');
+
+  background-position: center,
+    center 65%,
+    /* Perno movido más abajo */
+    center;
+  background-repeat:
+    repeat,
+    no-repeat,
+    repeat;
+  background-size:
+    cover,
+    clamp(180px, 35vw, 400px),
+    /* Perno un poco más pequeño */
+    /* Tamaño del perno grande y responsivo */
+    500px;
+  /* Tamaño del patrón metálico */
+  background-attachment: fixed;
 }
 
 a {
@@ -91,22 +117,34 @@ button {
   gap: 2.5rem;
 }
 
-/* Header */
 .header {
   position: sticky;
   top: 0;
   z-index: 50;
   width: 100%;
-  border-bottom: 1px solid var(--color-border);
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(12px);
   padding: 1rem 0;
+  /* El nuevo fondo de cinta que pidió el usuario */
+  background-image: url('https://img.freepik.com/psd-gratis/tejas-cuarentena-realistas-aisladas_23-2151178376.jpg?semt=ais_hybrid&w=740&q=80');
+  background-position: center;
+  /* Ajustamos para tapar lo blanco del .jpg original de Freepik */
+  background-size: 100% 1900%;
+  background-repeat: no-repeat;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 }
+
+/* El ::before de la cinta anterior se borra, ahora TODO el header es la cinta */
 
 .header-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* Placa oscura semitransparente ("pill") para que el logo y el texto blanco sean muy legibles sobre la cinta amarilla brillante */
+  background-color: rgba(17, 17, 17, 0.562);
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.75rem;
+  backdrop-filter: blur(5px);
+  border: 1px solidrgba(255, 255, 255, 0.05);
+  /* Reflejo mínimo */
 }
 
 .logo {

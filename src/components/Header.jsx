@@ -32,7 +32,7 @@ const Header = () => {
     <header className="header">
       <div className="container header-wrapper">
         <div className="flex items-center gap-10">
-          <Link to="/" className="logo cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
+          <Link to="/" className="logo cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <span className="material-symbols-outlined" style={{ fontSize: '2.5rem' }}>outdoor_grill</span>
             <h2>Mis Campanas Quincho</h2>
           </Link>
@@ -44,7 +44,7 @@ const Header = () => {
         </div>
         <div className="header-actions">
           <div className="search-bar">
-            <span className="material-symbols-outlined" style={{ color: 'rgba(236,146,19,0.6)' }}>search</span>
+            <span className="material-symbols-outlined" style={{ color: 'rgba(250, 221, 95, 0.88)' }}>search</span>
             <input type="text" placeholder="Buscar productos..." />
           </div>
           <button className="cart-btn" style={{ position: 'relative' }}>
