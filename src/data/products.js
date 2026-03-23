@@ -5,7 +5,8 @@ export const products = [
     price: 'desde $100.000',
     desc: 'Professional-grade silent extraction with integrated dimmable LED lighting.',
     image: '/campana_tipo_1.jpg',
-    badge: 'Campana para quincho'
+    badge: 'Campana para quincho',
+    isStandard: true
   },
   {
     id: 2,
@@ -46,5 +47,31 @@ export const products = [
     desc: 'comúnmente utilizado en sistemas de calefacción como salamandras o estufas a leña para desviar la trayectoria de los gases de combustión.',
     image: 'https://ai-toolkit-generations.imgix.net/content/-e-x-t-e-r-n-a-l_-i-m-a-g-e_-t-o_-i-m-a-g-e-v1/media__7/image-5da28c21-c19d-4073-8f52-625d0f1e3026.png?auto=format%2Ccompress&cs=srgb&w=1440&fit=max&s=7a153f00bee5bba957a0d78e226d2499',
     badge: 'codo'
+  },
+  {
+    id: 7,
+    name: 'Campana Rectangular',
+    price: 'desde $120.000',
+    desc: 'Diseño de líneas rectas, minimalista y robusto. Gran capacidad de extracción ideal para tu quincho.',
+    image: '/campana_rectangular.jpg',
+    badge: 'Campana para quincho'
+  },
+  {
+    id: 8,
+    name: 'Campana de Colo Colo',
+    price: 'desde $120.000',
+    desc: 'Campana para quincho con diseño exclusivo de Colo Colo. Ideal para los fanáticos del cacique.',
+    image: '/campana_colo.jpg',
+    badge: 'Edición Especial',
+    isStandard: true
+  },
+  {
+    id: 9,
+    name: 'Campana de la U',
+    price: 'desde $120.000',
+    desc: 'Campana para quincho con diseño exclusivo de la Universidad de Chile. Perfecta para los hinchas del romántico viajero.',
+    image: '/campana_u.jpg',
+    badge: 'Edición Especial',
+    isStandard: true
   }
 ];
