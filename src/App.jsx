@@ -10,6 +10,7 @@ import { CartProvider } from './context/CartContext';
 import AboutUs from './pages/AboutUs';
 import DesignManufacturing from './pages/DesignManufacturing';
 import ShippingPolicy from './pages/ShippingPolicy';
+import Blog from './pages/Blog';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
               <Route path="/sobre-nosotros" element={<AboutUs />} />
               <Route path="/diseno-fabricacion" element={<DesignManufacturing />} />
               <Route path="/politica-envios" element={<ShippingPolicy />} />
+              <Route path="/blog" element={<Blog />} />
             </Routes>
           </main>
           <Footer />

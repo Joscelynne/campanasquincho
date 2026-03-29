@@ -51,6 +51,7 @@ const WorkExamples = () => {
 
   return (
     <section
+      id="proyectos"
       ref={sectionRef}
       className="container"
       style={{ padding: '6rem 0' }}

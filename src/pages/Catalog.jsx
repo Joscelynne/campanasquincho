@@ -6,6 +6,7 @@ import Contact from '../components/Contact';
 import About from '../components/About';
 import WhyChooseUs from '../components/WhyChooseUs';
 import WorkExamples from '../components/WorkExamples';
+import BlogPreview from '../components/BlogPreview';
 import FAQ from '../components/FAQ';
 import Location from '../pages/Location';
 
@@ -25,6 +26,7 @@ const Catalog = () => {
       <About />
       <WhyChooseUs />
       <WorkExamples />
+      <BlogPreview />
       <FAQ />
       <Contact />
       <Location />

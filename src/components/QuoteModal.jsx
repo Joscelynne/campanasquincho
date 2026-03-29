@@ -19,7 +19,8 @@ const QuoteModal = ({ isOpen, onClose, product }) => {
   const isCampanaCuadrada = (!product.isStandard || isCustomSize) && nameLower.includes('cuadrada');
   const isCampana = (!product.isStandard || isCustomSize) && nameLower.includes('campana') && !isCampanaCuadrada;
   const isCodo = (!product.isStandard || isCustomSize) && nameLower.includes('codo');
-  const isChimenea = (!product.isStandard || isCustomSize) && (nameLower.includes('chimenea') || nameLower.includes('tubo') || nameLower.includes('sombrero') || nameLower.includes('tolva'));
+  const isDuctoCuadrado = (!product.isStandard || isCustomSize) && nameLower.includes('cuadrado');
+  const isChimenea = (!product.isStandard || isCustomSize) && (nameLower.includes('chimenea') || nameLower.includes('tubo') || nameLower.includes('sombrero') || nameLower.includes('tolva') || nameLower.includes('cilindro') || nameLower.includes('cilindr'));
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -39,7 +40,7 @@ const QuoteModal = ({ isOpen, onClose, product }) => {
     if (isStandardOption) {
       // If product has a price like "desde $100.000", extract the numeric part or just use the price string
       const priceDisplay = product.price.replace('desde ', '');
-      message = `Hola, quiero encargar la ${product.name} en medida Estándar. Sé que el valor es de ${priceDisplay}.`;
+      message = `Hola, quiero encargar el/la *${product.name}* en medida Estándar. Entiendo que el valor base es ${priceDisplay}.\n\n`;
     } else {
       message = `Hola, me gustaría cotizar el siguiente producto:\n`;
       message += `*Producto:* ${product.name}\n`;
@@ -56,6 +57,10 @@ const QuoteModal = ({ isOpen, onClose, product }) => {
         if (formData.profundidad) message += `*Profundidad:* ${formData.profundidad} cm\n`;
         if (formData.anchoCano) message += `*Ancho del Caño:* ${formData.anchoCano} cm\n`;
         if (formData.altoCano) message += `*Alto del Caño:* ${formData.altoCano} cm\n`;
+      } else if (isDuctoCuadrado) {
+        if (formData.ancho) message += `*Ancho:* ${formData.ancho} cm\n`;
+        if (formData.fondo) message += `*Fondo:* ${formData.fondo} cm\n`;
+        if (formData.largo) message += `*Largo:* ${formData.largo} cm\n`;
       } else if (isCodo) {
         if (formData.diametro) message += `*Diámetro:* ${formData.diametro} cm\n`;
         if (formData.angulo) message += `*Ángulo:* ${formData.angulo}°\n`;
@@ -65,10 +70,12 @@ const QuoteModal = ({ isOpen, onClose, product }) => {
       } else {
         if (formData.medidas) message += `*Medidas:* ${formData.medidas}\n`;
       }
-
-      if (formData.cantidad) message += `*Cantidad:* ${formData.cantidad}\n`;
-      if (formData.detalles) message += `\n*Detalles adicionales:*\n${formData.detalles}`;
     }
+
+    // Estos se envían tanto para estándar como para cotizaciones
+    if (formData.espesor) message += `*Espesor:* ${formData.espesor} mm\n`;
+    if (formData.cantidad) message += `*Cantidad:* ${formData.cantidad}\n`;
+    if (formData.detalles) message += `\n*Detalles adicionales:*\n${formData.detalles}`;
 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -89,7 +96,7 @@ const QuoteModal = ({ isOpen, onClose, product }) => {
           <img src={product.image} alt={product.name} />
           <div>
             <h3>{product.name}</h3>
-            <p className="product-badge" style={{ position: 'relative', top: 0, left: 0, display: 'inline-block' }}>{product.badge}</p>
+            <p className="product-badge" style={{ position: 'relative', top: 0, left: 0, display: 'inline-block' }}>{product.badge || 'Producto'}</p>
           </div>
         </div>
 
@@ -168,6 +175,23 @@ const QuoteModal = ({ isOpen, onClose, product }) => {
             </>
           )}
 
+          {isDuctoCuadrado && !isCampanaCuadrada && (
+            <div className="form-row">
+              <div className="form-group">
+                <label>Ancho (cm) *</label>
+                <input type="number" name="ancho" required onChange={handleInputChange} className="form-input" />
+              </div>
+              <div className="form-group">
+                <label>Fondo (cm) *</label>
+                <input type="number" name="fondo" required onChange={handleInputChange} className="form-input" />
+              </div>
+              <div className="form-group">
+                <label>Largo (cm) *</label>
+                <input type="number" name="largo" required onChange={handleInputChange} className="form-input" />
+              </div>
+            </div>
+          )}
+
           {isCodo && (
             <div className="form-row">
               <div className="form-group">
@@ -181,7 +205,7 @@ const QuoteModal = ({ isOpen, onClose, product }) => {
             </div>
           )}
 
-          {isChimenea && (
+          {isChimenea && !isDuctoCuadrado && !isCodo && !isCampana && !isCampanaCuadrada && (
             <div className="form-row">
               <div className="form-group">
                 <label>Diámetro (cm) *</label>
@@ -194,16 +218,22 @@ const QuoteModal = ({ isOpen, onClose, product }) => {
             </div>
           )}
 
-          {!isCampanaCuadrada && !isCampana && !isCodo && !isChimenea && !isStandardOption && (
+          {!isCampanaCuadrada && !isCampana && !isDuctoCuadrado && !isCodo && !isChimenea && !isStandardOption && (
             <div className="form-group">
               <label>Medidas o especificaciones *</label>
               <input type="text" name="medidas" required placeholder="Ej: 50x50 cm, diámetro 15cm" onChange={handleInputChange} className="form-input" />
             </div>
           )}
 
-          <div className="form-group">
-            <label>Cantidad *</label>
-            <input type="number" name="cantidad" min="1" defaultValue="1" required onChange={handleInputChange} className="form-input" />
+          <div className="form-row">
+            <div className="form-group">
+              <label>Espesor (mm) *</label>
+              <input type="number" name="espesor" step="0.1" placeholder="Ej: 1 o 1.2" required onChange={handleInputChange} className="form-input" />
+            </div>
+            <div className="form-group">
+              <label>Cantidad *</label>
+              <input type="number" name="cantidad" min="1" defaultValue="1" required onChange={handleInputChange} className="form-input" />
+            </div>
           </div>
 
           <div className="form-group">
