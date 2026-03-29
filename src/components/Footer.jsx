@@ -28,7 +28,6 @@ const Footer = () => {
           <h4 className="footer-title">Compañía</h4>
           <ul className="footer-links">
             <li><Link to="/sobre-nosotros">Sobre Nosotros</Link></li>
-            <li><Link to="/ubicacion">nuestra ubicacion</Link></li>
             <li><Link to="/diseno-fabricacion">Diseño y Fabricación</Link></li>
             <li><Link to="/politica-envios">Política de Envíos</Link></li>
           </ul>

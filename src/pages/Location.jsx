@@ -2,7 +2,7 @@ import React from 'react';
 
 const Location = () => {
   return (
-    <div className="container" style={{ padding: '6rem 2rem', minHeight: '60vh' }}>
+    <section id="ubicacion" className="container" style={{ padding: '6rem 2rem' }}>
       <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
         <h1 className="text-primary" style={{ fontSize: '3rem', marginBottom: '1rem', fontWeight: '800' }}>
           Nuestra Ubicación
@@ -60,7 +60,7 @@ const Location = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

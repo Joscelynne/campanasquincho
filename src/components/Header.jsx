@@ -38,7 +38,7 @@ const Header = () => {
           </Link>
           <nav className="nav-links">
             <a href="#productos" onClick={(e) => handleScroll(e, 'productos')} style={{ cursor: 'pointer' }}>Productos</a>
-            <a href="#comentarios" onClick={(e) => handleScroll(e, 'comentarios')} style={{ cursor: 'pointer' }}>Comentarios</a>
+            <a href="#nosotros" onClick={(e) => handleScroll(e, 'nosotros')} style={{ cursor: 'pointer' }}>Nosotros</a>
             <a href="#contacto" onClick={(e) => handleScroll(e, 'contacto')} style={{ cursor: 'pointer' }}>Contacto</a>
           </nav>
         </div>

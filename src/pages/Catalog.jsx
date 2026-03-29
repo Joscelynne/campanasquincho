@@ -1,8 +1,13 @@
 import React from 'react';
 import Hero from '../components/Hero';
 import ProductGrid from '../components/ProductGrid';
+import Services from '../components/Services';
 import Contact from '../components/Contact';
-import Comments from '../components/Comments';
+import About from '../components/About';
+import WhyChooseUs from '../components/WhyChooseUs';
+import WorkExamples from '../components/WorkExamples';
+import FAQ from '../components/FAQ';
+import Location from '../pages/Location';
 
 const Catalog = () => {
   return (
@@ -16,8 +21,13 @@ const Catalog = () => {
         </div>
         <ProductGrid />
       </section>
-      <Comments />
+      <Services />
+      <About />
+      <WhyChooseUs />
+      <WorkExamples />
+      <FAQ />
       <Contact />
+      <Location />
     </>
   );
 };
