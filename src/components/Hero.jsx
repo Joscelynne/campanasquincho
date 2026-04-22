@@ -18,8 +18,18 @@ const Hero = () => {
             Campanas y parrillas de alta calidad diseñadas para la cocina exterior sofisticada.
           </p>
           <div className="flex gap-4" style={{ marginTop: '1rem' }}>
-            <button className="btn-primary">Ver campanas</button>
-            <button className="btn-outline">Cotiza tu proyecto</button>
+            <button 
+              className="btn-primary"
+              onClick={() => document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Ver campanas
+            </button>
+            <button 
+              className="btn-outline"
+              onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Cotiza tu proyecto
+            </button>
           </div>
         </div>
       </div>

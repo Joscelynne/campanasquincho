@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
@@ -6,9 +6,11 @@ const Header = () => {
   const { cartCount } = useCart();
   const navigate = useNavigate();
   const location = useLocation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleScroll = (e, sectionId) => {
     e.preventDefault();
+    setIsMobileMenuOpen(false);
     if (location.pathname !== '/') {
       // Si no estamos en el home, navegamos hacia allí con un hash en la URL
       navigate(`/#${sectionId}`);
@@ -36,7 +38,7 @@ const Header = () => {
             <span className="material-symbols-outlined" style={{ fontSize: '2.5rem' }}>outdoor_grill</span>
             <h2>Mis Campanas Quincho</h2>
           </Link>
-          <nav className="nav-links">
+          <nav className={`nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
             <a href="#productos" onClick={(e) => handleScroll(e, 'productos')} style={{ cursor: 'pointer' }}>Productos</a>
             <a href="#nosotros" onClick={(e) => handleScroll(e, 'nosotros')} style={{ cursor: 'pointer' }}>Nosotros</a>
             <a href="#proyectos" onClick={(e) => handleScroll(e, 'proyectos')} style={{ cursor: 'pointer' }}>Proyectos Realizados</a>
@@ -55,6 +57,14 @@ const Header = () => {
             {cartCount > 0 && (
               <span className="cart-badge">{cartCount}</span>
             )}
+          </button>
+          <button 
+            className="mobile-menu-btn" 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            <span className="material-symbols-outlined">
+              {isMobileMenuOpen ? 'close' : 'menu'}
+            </span>
           </button>
         </div>
       </div>

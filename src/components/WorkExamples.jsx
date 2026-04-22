@@ -5,25 +5,37 @@ const examples = [
     id: 1,
     title: 'Campana Con Encaje de Madera',
     // Usando placeholder temporal premium oscuro
-    imgSrc: 'https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&q=80&w=800',
+    imgSrc: 'proyecto1.webp',
     className: 'bento-item bento-small'
   },
   {
     id: 2,
     title: 'Campana Básica',
-    imgSrc: 'https://images.unsplash.com/photo-1590494165264-1ebe3602eb80?auto=format&fit=crop&q=80&w=1200',
+    imgSrc: 'proyecto2.webp',
     className: 'bento-item bento-large'
   },
   {
     id: 3,
     title: 'Campana Mediterránea',
-    imgSrc: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1200',
+    imgSrc: 'proyecto3.webp',
     className: 'bento-item bento-large'
   },
   {
     id: 4,
+    title: 'Proyecto 6',
+    imgSrc: 'proyecto6.webp',
+    className: 'bento-item bento-large'
+  },
+  {
+    id: 5,
+    title: 'Proyecto 5',
+    imgSrc: 'proyecto5.webp',
+    className: 'bento-item bento-large'
+  },
+  {
+    id: 6,
     title: 'Campana Con Cinturón',
-    imgSrc: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800',
+    imgSrc: 'proyecto4.webp',
     className: 'bento-item bento-small'
   }
 ];
@@ -59,9 +71,8 @@ const WorkExamples = () => {
       <style>
         {`
           .bento-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
+            column-count: 1;
+            column-gap: 1.5rem;
             padding: 0 1rem;
           }
           
@@ -69,7 +80,8 @@ const WorkExamples = () => {
             position: relative;
             border-radius: 1rem;
             overflow: hidden;
-            height: 300px;
+            margin-bottom: 1.5rem;
+            break-inside: avoid;
             cursor: pointer;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
             border: 1px solid rgba(255,255,255,0.05);
@@ -77,8 +89,8 @@ const WorkExamples = () => {
 
           .bento-item img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            display: block;
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
           }
 
@@ -86,42 +98,15 @@ const WorkExamples = () => {
             transform: scale(1.05);
           }
 
-          .bento-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 50%;
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
-            display: flex;
-            align-items: flex-end;
-            padding: 1.5rem;
-            pointer-events: none;
-          }
-
-          .bento-title {
-            color: #fff;
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.8);
-          }
-
           @media (min-width: 768px) {
             .bento-grid {
-              grid-template-columns: repeat(12, 1fr);
+              column-count: 2;
             }
-            .bento-small {
-              grid-column: span 4;
-            }
-            .bento-large {
-              grid-column: span 8;
-            }
-            .bento-item {
-              height: 350px;
+          }
+
+          @media (min-width: 1024px) {
+            .bento-grid {
+              column-count: 3;
             }
           }
         `}
@@ -154,7 +139,7 @@ const WorkExamples = () => {
         {examples.map((example, index) => (
           <div
             key={example.id}
-            className={example.className}
+            className="bento-item"
             style={{
               opacity: isVisible ? 1 : 0,
               transform: isVisible ? 'translateY(0)' : 'translateY(40px)',
@@ -162,14 +147,6 @@ const WorkExamples = () => {
             }}
           >
             <img src={example.imgSrc} alt={example.title} loading="lazy" />
-            <div className="bento-overlay">
-              <h3 className="bento-title">
-                {example.title}
-                <span className="material-symbols-outlined" style={{ fontSize: '1.2rem', color: 'var(--color-primary)' }}>
-                  arrow_outward
-                </span>
-              </h3>
-            </div>
           </div>
         ))}
       </div>
