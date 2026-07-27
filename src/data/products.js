@@ -29,7 +29,7 @@ export const products = [
     name: 'kit de chimenea cilindrico',
     price: 'desde $50.000',
     desc: 'incluye 5 piezas auto-ensamblables: un codo de 50 cm, un tubo de 90 cm, dos tubos de 1 metro cada uno y un sombrero chino fijo',
-    image: '/proyecto4.webp',
+    image: '/ducto_cilindrico.jfif',
     badge: 'Chimenea'
   },
   {
@@ -37,7 +37,7 @@ export const products = [
     name: 'transformación redondo cuadrado',
     price: 'desde $40.000',
     desc: 'comúnmente utilizado en sistemas de calefacción como salamandras o estufas a leña para desviar la trayectoria de los gases de combustión.',
-    image: '/proyecto5.webp',
+    image: '/ducto_cuadrado.jpg',
     badge: 'Tolva'
   },
   {
@@ -45,7 +45,7 @@ export const products = [
     name: 'codo cilindrico',
     price: 'desde $30.000',
     desc: 'comúnmente utilizado en sistemas de calefacción como salamandras o estufas a leña para desviar la trayectoria de los gases de combustión.',
-    image: '/proyecto6.webp',
+    image: '/ducto_cilindrico.jfif',
     badge: 'codo'
   },
   {

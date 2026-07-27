@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useLayoutEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Catalog from './pages/Catalog';
@@ -12,11 +12,22 @@ import DesignManufacturing from './pages/DesignManufacturing';
 import ShippingPolicy from './pages/ShippingPolicy';
 import Blog from './pages/Blog';
 
+function ScrollToTop() {
+  const location = useLocation();
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname, location.hash]);
+
+  return null;
+}
+
 function App() {
   return (
     <CartProvider>
       <Router>
         <div className="app">
+          <ScrollToTop />
           <Header />
           <main>
             <Routes>

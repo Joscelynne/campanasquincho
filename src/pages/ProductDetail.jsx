@@ -21,7 +21,7 @@ const ProductDetail = () => {
   return (
     <div className="container" style={{ padding: '4rem 0' }}>
       <button onClick={() => navigate(-1)} style={{ color: 'var(--color-text-muted)', display: 'flex', gap: '0.5rem', alignItems: 'center', marginBottom: '2rem', transition: 'color 0.3s ease' }} onMouseOver={(e) => e.target.style.color = 'var(--color-primary)'} onMouseOut={(e) => e.target.style.color = 'var(--color-text-muted)'}>
-        <span className="material-symbols-outlined">arrow_back</span> Back to Catalog
+        <span className="material-symbols-outlined">arrow_back</span> Volver a atrás
       </button>
       
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'center' }}>
