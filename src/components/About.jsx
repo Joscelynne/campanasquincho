@@ -68,13 +68,13 @@ const About = () => {
         <div style={{
           backgroundColor: 'var(--color-primary-light)',
           border: '1px solid var(--color-border)',
-          borderRadius: '1.5rem',
+          borderRadius: '0.25rem',
           padding: '3rem 2.5rem',
           position: 'relative',
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? 'translateX(0)' : 'translateX(-50px)',
           transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s',
-          boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
           display: 'flex',
           flexDirection: 'column'
         }}>
@@ -117,13 +117,13 @@ const About = () => {
         <div style={{
           backgroundColor: 'var(--color-primary-light)',
           border: '1px solid var(--color-border)',
-          borderRadius: '1.5rem',
+          borderRadius: '0.25rem',
           padding: '3rem 2.5rem',
           position: 'relative',
           opacity: isVisible ? 1 : 0,
           transform: isVisible ? 'translateX(0)' : 'translateX(50px)',
           transition: 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s',
-          boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
+          boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
           display: 'flex',
           flexDirection: 'column'
         }}>

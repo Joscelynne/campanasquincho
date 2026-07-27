@@ -1,9 +1,34 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ShippingPolicy = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="container" style={{ padding: '6rem 2rem', minHeight: '60vh' }}>
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+        <button
+          onClick={() => navigate(-1)}
+          style={{
+            color: 'var(--color-text-muted)',
+            display: 'inline-flex',
+            gap: '0.5rem',
+            alignItems: 'center',
+            marginBottom: '2rem',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            fontFamily: 'inherit',
+            fontSize: '0.95rem',
+            transition: 'color 0.3s ease'
+          }}
+          onMouseOver={(e) => e.currentTarget.style.color = 'var(--color-primary)'}
+          onMouseOut={(e) => e.currentTarget.style.color = 'var(--color-text-muted)'}
+        >
+          <span className="material-symbols-outlined">arrow_back</span>
+          Volver
+        </button>
+
         <h1 className="text-primary" style={{ fontSize: '3rem', marginBottom: '2rem', fontWeight: '800' }}>
           Política de Envíos
         </h1>
@@ -19,16 +44,6 @@ const ShippingPolicy = () => {
                 <h4 style={{ fontSize: '1.25rem', color: 'var(--color-text-light)', marginBottom: '0.5rem' }}>Despachos en Región Metropolitana</h4>
                 <p style={{ color: 'var(--color-text-muted)' }}>
                   Ofrecemos envío directo e instalación (si corresponde) dentro de toda la Región Metropolitana. Coordinamos el día y horario directamente contigo para asegurar que todo el proceso sea cómodo y eficiente.
-                </p>
-              </div>
-            </div>
-
-            <div style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-              <span className="material-symbols-outlined text-primary" style={{ fontSize: '2rem' }}>flight_takeoff</span>
-              <div>
-                <h4 style={{ fontSize: '1.25rem', color: 'var(--color-text-light)', marginBottom: '0.5rem' }}>Envíos a Todo Chile</h4>
-                <p style={{ color: 'var(--color-text-muted)' }}>
-                  Si te encuentras fuera de la Región Metropolitana, realizamos envíos a través de transportes de carga consolidados. Seleccionamos el servicio más seguro y eficiente según tu ubicación para garantizar que tu producto llegue en perfectas condiciones.
                 </p>
               </div>
             </div>

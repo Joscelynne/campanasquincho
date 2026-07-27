@@ -29,7 +29,7 @@ export const products = [
     name: 'kit de chimenea cilindrico',
     price: 'desde $50.000',
     desc: 'incluye 5 piezas auto-ensamblables: un codo de 50 cm, un tubo de 90 cm, dos tubos de 1 metro cada uno y un sombrero chino fijo',
-    image: 'https://ai-toolkit-generations.imgix.net/content/-e-x-t-e-r-n-a-l_-i-m-a-g-e_-t-o_-i-m-a-g-e-v1/media__3/image-2becad1c-e353-4c81-85af-47983de3d520.png?auto=format%2Ccompress&cs=srgb&w=1440&fit=max&s=5ca77e501ff826e31c6623ff1a9c8a02',
+    image: '/proyecto4.webp',
     badge: 'Chimenea'
   },
   {
@@ -37,7 +37,7 @@ export const products = [
     name: 'transformación redondo cuadrado',
     price: 'desde $40.000',
     desc: 'comúnmente utilizado en sistemas de calefacción como salamandras o estufas a leña para desviar la trayectoria de los gases de combustión.',
-    image: 'https://ai-toolkit-generations.imgix.net/content/-e-x-t-e-r-n-a-l_-i-m-a-g-e_-t-o_-i-m-a-g-e-v1/media__10/image-4d1a355f-17c6-4ab5-8dfd-660132c0e5bf.png?auto=format%2Ccompress&cs=srgb&w=1440&fit=max&s=f77d00f4a7067b38e38c68fc23398fc2',
+    image: '/proyecto5.webp',
     badge: 'Tolva'
   },
   {
@@ -45,7 +45,7 @@ export const products = [
     name: 'codo cilindrico',
     price: 'desde $30.000',
     desc: 'comúnmente utilizado en sistemas de calefacción como salamandras o estufas a leña para desviar la trayectoria de los gases de combustión.',
-    image: 'https://ai-toolkit-generations.imgix.net/content/-e-x-t-e-r-n-a-l_-i-m-a-g-e_-t-o_-i-m-a-g-e-v1/media__7/image-5da28c21-c19d-4073-8f52-625d0f1e3026.png?auto=format%2Ccompress&cs=srgb&w=1440&fit=max&s=7a153f00bee5bba957a0d78e226d2499',
+    image: '/proyecto6.webp',
     badge: 'codo'
   },
   {

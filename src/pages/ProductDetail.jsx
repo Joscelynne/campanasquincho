@@ -25,12 +25,12 @@ const ProductDetail = () => {
       </button>
       
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4rem', alignItems: 'center' }}>
-        <div style={{ flex: '1 1 400px', borderRadius: '1rem', overflow: 'hidden', aspectRatio: '1', backgroundColor: 'var(--color-primary-light)' }}>
+        <div style={{ flex: '1 1 400px', borderRadius: '0.25rem', overflow: 'hidden', aspectRatio: '1', backgroundColor: 'var(--color-primary-light)' }}>
           <img src={product.image} alt={product.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
         </div>
         
         <div style={{ flex: '1 1 400px' }}>
-          <span style={{ backgroundColor: 'var(--color-primary-light)', color: 'var(--color-primary)', border: '1px solid var(--color-border)', borderRadius: '0.5rem', padding: '0.25rem 0.75rem', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '0.1em' }}>{product.badge}</span>
+          <span style={{ backgroundColor: 'var(--color-primary-light)', color: 'var(--color-primary)', border: '1px solid var(--color-border)', borderRadius: '0.25rem', padding: '0.25rem 0.75rem', fontWeight: 'bold', textTransform: 'uppercase', fontSize: '0.75rem', letterSpacing: '0.1em' }}>{product.badge}</span>
           <h1 style={{ fontSize: '3rem', fontWeight: '900', margin: '1rem 0', lineHeight: 1.2 }}>{product.name}</h1>
           <p style={{ fontSize: '2rem', color: 'var(--color-primary)', fontWeight: '800', marginBottom: '2rem' }}>{product.price}</p>
           

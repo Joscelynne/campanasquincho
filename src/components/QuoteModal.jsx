@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getWhatsAppUrl } from '../config/siteConfig';
 
 const QuoteModal = ({ isOpen, onClose, product }) => {
   const [formData, setFormData] = useState({ cantidad: 1 });
@@ -7,8 +8,6 @@ const QuoteModal = ({ isOpen, onClose, product }) => {
   React.useEffect(() => {
     setIsCustomSize(false);
   }, [product?.id]);
-
-  const phoneNumber = "56932253354";
 
   if (!isOpen || !product) return null;
 
@@ -77,8 +76,8 @@ const QuoteModal = ({ isOpen, onClose, product }) => {
     if (formData.cantidad) message += `*Cantidad:* ${formData.cantidad}\n`;
     if (formData.detalles) message += `\n*Detalles adicionales:*\n${formData.detalles}`;
 
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    const whatsappUrl = getWhatsAppUrl(message);
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     onClose();
   };
 

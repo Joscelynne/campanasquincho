@@ -15,7 +15,7 @@ const Location = () => {
           <div style={{ 
             backgroundColor: 'var(--color-primary-light)', 
             padding: '2rem', 
-            borderRadius: '1rem',
+            borderRadius: '0.25rem',
             border: '1px solid var(--color-border)'
           }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: 'var(--color-text-light)' }}>
@@ -42,7 +42,7 @@ const Location = () => {
           </div>
           
           <div style={{ 
-            borderRadius: '1rem', 
+            borderRadius: '0.25rem', 
             overflow: 'hidden', 
             border: '1px solid var(--color-border)',
             height: '400px'

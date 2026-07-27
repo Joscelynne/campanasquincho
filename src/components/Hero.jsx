@@ -1,4 +1,5 @@
 import React from 'react';
+import { getWhatsAppUrl } from '../config/siteConfig';
 
 const Hero = () => {
   return (
@@ -24,12 +25,15 @@ const Hero = () => {
             >
               Ver campanas
             </button>
-            <button 
+            <a
               className="btn-outline"
-              onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
+              href={getWhatsAppUrl('Hola, quiero cotizar una campana para quincho')}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
             >
               Cotiza tu proyecto
-            </button>
+            </a>
           </div>
         </div>
       </div>

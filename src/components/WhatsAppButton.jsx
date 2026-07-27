@@ -1,9 +1,9 @@
 import React from 'react';
+import { getWhatsAppUrl } from '../config/siteConfig';
 
 const WhatsAppButton = () => {
-  const phoneNumber = "56932253354"; // Número basado en el footer/contacto
-  const message = "Hola, estoy interesado en sus productos y me gustaría recibir más información.";
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  const message = 'Hola, quiero cotizar una campana para quincho';
+  const whatsappUrl = getWhatsAppUrl(message);
 
   return (
     <div className="whatsapp-container">

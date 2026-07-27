@@ -1,4 +1,5 @@
 import React from 'react';
+import { SITE, getWhatsAppUrl } from '../config/siteConfig';
 
 const Contact = () => {
   return (
@@ -33,7 +34,7 @@ const Contact = () => {
           <div style={{
             backgroundColor: 'var(--color-primary-light)',
             padding: '2.5rem 2rem',
-            borderRadius: '1.5rem',
+            borderRadius: '0.25rem',
             border: '1px solid var(--color-border)',
             boxShadow: '0 10px 30px rgba(0,0,0,0.2)',
             display: 'flex',
@@ -61,13 +62,13 @@ const Contact = () => {
               </li>
             </ul>
 
-            <a href="https://wa.me/56932253354" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{
+            <a href={getWhatsAppUrl('Hola, quiero cotizar una campana para quincho')} target="_blank" rel="noopener noreferrer" className="btn-primary" style={{
               marginTop: '2rem',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               gap: '0.5rem',
-              backgroundColor: '#25D366', // Green WhatsApp color
+              backgroundColor: '#25D366',
               borderColor: '#25D366',
               color: '#fff',
               width: '100%',
@@ -82,7 +83,7 @@ const Contact = () => {
           <div style={{
             backgroundColor: 'var(--color-bg-dark)',
             padding: '2.5rem 2rem',
-            borderRadius: '1.5rem',
+            borderRadius: '0.25rem',
             border: '1px solid rgba(255,255,255,0.05)',
             boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
             display: 'flex',
@@ -112,7 +113,7 @@ const Contact = () => {
           gap: '1.5rem',
           padding: '2.5rem',
           backgroundColor: 'var(--color-bg-dark)',
-          borderRadius: '1.5rem',
+          borderRadius: '0.25rem',
           border: '1px solid rgba(255,255,255,0.05)',
           maxWidth: '800px',
           margin: '0 auto',
@@ -138,7 +139,7 @@ const Contact = () => {
               </div>
               <div>
                 <strong style={{ display: 'block', color: 'var(--color-text-light)', fontSize: '1.1rem', marginBottom: '0.2rem' }}>Escríbenos</strong>
-                <span style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem' }}>rorodeltasant@gmail.com</span>
+                <span style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem' }}>{SITE.email}</span>
               </div>
             </div>
 
@@ -148,7 +149,7 @@ const Contact = () => {
               </div>
               <div>
                 <strong style={{ display: 'block', color: 'var(--color-text-light)', fontSize: '1.1rem', marginBottom: '0.2rem' }}>Llámanos</strong>
-                <span style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem' }}>+56 9 3225 3354</span>
+                <span style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem' }}>{SITE.phone}</span>
               </div>
             </div>
 

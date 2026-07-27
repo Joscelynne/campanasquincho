@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
-
 const Header = () => {
-  const { cartCount } = useCart();
   const navigate = useNavigate();
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -48,16 +45,7 @@ const Header = () => {
           </nav>
         </div>
         <div className="header-actions">
-          <div className="search-bar">
-            <span className="material-symbols-outlined" style={{ color: 'rgba(250, 221, 95, 0.88)' }}>search</span>
-            <input type="text" placeholder="Buscar productos..." />
-          </div>
-          <button className="cart-btn" style={{ position: 'relative' }}>
-            <span className="material-symbols-outlined">shopping_bag</span>
-            {cartCount > 0 && (
-              <span className="cart-badge">{cartCount}</span>
-            )}
-          </button>
+
           <button 
             className="mobile-menu-btn" 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

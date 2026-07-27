@@ -78,7 +78,7 @@ const WorkExamples = () => {
           
           .bento-item {
             position: relative;
-            border-radius: 1rem;
+            border-radius: 0.25rem;
             overflow: hidden;
             margin-bottom: 1.5rem;
             break-inside: avoid;

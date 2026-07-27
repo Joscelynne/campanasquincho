@@ -41,7 +41,7 @@ const Comments = () => {
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '2rem' }}>
         {comments.map((comment) => (
-          <div key={comment.id} style={{ backgroundColor: 'var(--color-primary-light)', border: '1px solid var(--color-border)', padding: '2rem', borderRadius: '1rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <div key={comment.id} style={{ backgroundColor: 'var(--color-primary-light)', border: '1px solid var(--color-border)', padding: '2rem', borderRadius: '0.25rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                 <div style={{ width: '48px', height: '48px', borderRadius: '50%', backgroundColor: 'var(--color-bg-dark)', color: 'var(--color-primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '1.25rem', border: '1px solid var(--color-primary)' }}>

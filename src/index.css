@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0');
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 :root {
   --color-primary: #ecd613;
   --color-primary-hover: rgba(236, 52, 19, 0.9);
@@ -26,19 +32,12 @@ body {
   color: var(--color-text-light);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-
-  /* Nuevo fondo: Placa metálica oscura con un perno centrado oscurecido */
   background-image:
-    /* 1. Gradiente superior (oscurece TODAS las capas debajo por igual) */
     linear-gradient(rgba(17, 17, 17, 0.479), rgba(17, 17, 17, 0.95)),
-    /* 2. Perno centrado y grande */
     url('https://scdn.autodoc.de/catalog/categories/600x600/74851.png'),
-    /* 3. Fondo metálico base */
     url('https://http2.mlstatic.com/D_NQ_NP_668099-MLA53101066919_122022-O.webp');
-
   background-position: center,
     center 65%,
-    /* Perno movido más abajo */
     center;
   background-repeat:
     repeat,
@@ -47,11 +46,13 @@ body {
   background-size:
     cover,
     clamp(180px, 35vw, 400px),
-    /* Perno un poco más pequeño */
-    /* Tamaño del perno grande y responsivo */
     500px;
-  /* Tamaño del patrón metálico */
   background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 a {
@@ -122,30 +123,26 @@ button {
   top: 0;
   z-index: 50;
   width: 100%;
-  padding: 1rem 0;
-  /* El nuevo fondo de cinta que pidió el usuario */
-  background-image: url('https://img.freepik.com/psd-gratis/tejas-cuarentena-realistas-aisladas_23-2151178376.jpg?semt=ais_hybrid&w=740&q=80');
-  background-position: center;
-  /* Ajustamos para tapar lo blanco del .jpg original de Freepik */
-  background-size: 100% 1900%;
-  background-repeat: no-repeat;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  padding: 0.5rem 0;
+  background-color: rgba(17, 17, 17, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 4px solid transparent;
+  border-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-primary),
+    var(--color-primary) 15px,
+    var(--color-bg-dark) 15px,
+    var(--color-bg-dark) 30px
+  ) 1;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
 }
-
-/* El ::before de la cinta anterior se borra, ahora TODO el header es la cinta */
 
 .header-wrapper {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* Placa oscura semitransparente ("pill") para que el logo y el texto blanco sean muy legibles sobre la cinta amarilla brillante */
-  background-color: rgba(17, 17, 17, 0.562);
-  padding: 0.75rem 1.75rem;
-  border-radius: 0.75rem;
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  /* Reflejo mínimo */
+  padding: 0.5rem 1.75rem;
 }
 
 .logo {
@@ -190,10 +187,7 @@ button {
 }
 
 @media (max-width: 1024px) {
-  .search-bar {
-    display: none !important;
-  }
-  
+
   .mobile-menu-btn {
     display: flex;
     align-items: center;
@@ -210,10 +204,10 @@ button {
     background-color: rgba(17, 17, 17, 0.95);
     flex-direction: column;
     padding: 1.5rem;
-    border-radius: 0.75rem;
+    border-radius: 0.25rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
     gap: 1.5rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.9);
     backdrop-filter: blur(10px);
   }
   
@@ -226,61 +220,64 @@ button {
   }
 }
 
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 0 2rem;
+    height: 420px;
+  }
+
+  .hero-title {
+    font-size: clamp(2.2rem, 6vw, 3rem);
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+  }
+
+  .product-grid {
+    gap: 1.5rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .hero-container {
+    padding: 0 1rem;
+    height: 360px;
+  }
+
+  .hero-content {
+    gap: 1rem;
+  }
+
+  .btn-primary,
+  .btn-outline,
+  .btn-block {
+    width: 100%;
+    padding: 1rem 1.25rem;
+  }
+
+  .whatsapp-container {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}
+
 .header-actions {
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
 
-.search-bar {
-  display: flex;
-  align-items: center;
-  background-color: var(--color-primary-light);
-  border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  width: 200px;
-}
-
-.search-bar input {
-  background: transparent;
-  border: none;
-  color: var(--color-text-light);
-  font-size: 0.875rem;
-  margin-left: 0.5rem;
-  outline: none;
-  width: 100%;
-}
-
-.search-bar input::placeholder {
-  color: var(--color-text-muted);
-}
-
-.cart-btn {
-  position: relative;
-  color: var(--color-text-light);
-  transition: color 0.3s ease;
-}
-
-.cart-btn:hover {
-  color: var(--color-primary);
-}
-
-.cart-badge {
-  position: absolute;
-  top: -5px;
-  right: -5px;
-  background-color: var(--color-primary);
-  color: var(--color-bg-dark);
-  font-size: 0.625rem;
-  font-weight: bold;
-  height: 16px;
-  width: 16px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 /* Hero Section */
 .hero-section {
@@ -289,7 +286,7 @@ button {
 
 .hero-container {
   height: 500px;
-  border-radius: 1rem;
+  border-radius: 0.25rem;
   overflow: hidden;
   background-size: cover;
   background-position: center;
@@ -330,7 +327,7 @@ button {
   color: var(--color-bg-dark);
   font-weight: 700;
   padding: 1rem 2rem;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   transition: all 0.3s ease;
   font-size: 1rem;
 }
@@ -345,7 +342,7 @@ button {
   color: var(--color-primary);
   font-weight: 700;
   padding: 1rem 2rem;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   transition: all 0.3s ease;
   font-size: 1rem;
 }
@@ -367,9 +364,9 @@ button {
 }
 
 .product-card {
-  background-color: var(--color-primary-light);
+  background-color: transparent;
   border: 1px solid var(--color-border);
-  border-radius: 0.75rem;
+  border-radius: 0.25rem;
   overflow: hidden;
   transition: all 0.3s ease;
   display: flex;
@@ -378,7 +375,7 @@ button {
 
 .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(236, 146, 19, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
 
 .product-image-container {
@@ -402,14 +399,15 @@ button {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background-color: rgba(34, 26, 16, 0.8);
+  background-color: rgba(10, 10, 10, 0.9);
   color: var(--color-primary);
-  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--color-border);
+  padding: 0.25rem 0.75rem;
   border-radius: 0.25rem;
   font-size: 0.625rem;
-  font-weight: bold;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.15em;
 }
 
 .product-fav {
@@ -419,7 +417,8 @@ button {
   height: 2.5rem;
   width: 2.5rem;
   border-radius: 50%;
-  background-color: rgba(34, 26, 16, 0.6);
+  background-color: rgba(10, 10, 10, 0.8);
+  border: 1px solid var(--color-border);
   color: var(--color-text-light);
   display: flex;
   align-items: center;
@@ -483,7 +482,7 @@ button {
   border: 1px solid var(--color-border);
   color: var(--color-text-light);
   padding: 0.75rem;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   font-weight: 700;
   transition: all 0.3s ease;
 }
@@ -631,12 +630,12 @@ button {
 .quote-modal-content {
   background-color: var(--color-bg-dark);
   border: 1px solid var(--color-border);
-  border-radius: 1rem;
+  border-radius: 0.25rem;
   width: 100%;
   max-width: 500px;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
   display: flex;
   flex-direction: column;
 }
@@ -683,7 +682,7 @@ button {
   width: 60px;
   height: 60px;
   object-fit: cover;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   border: 1px solid var(--color-border);
 }
 
@@ -724,7 +723,7 @@ button {
 .form-input {
   background-color: rgba(0, 0, 0, 0.2);
   border: 1px solid var(--color-border);
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   padding: 0.75rem 1rem;
   color: var(--color-text-light);
   font-family: inherit;

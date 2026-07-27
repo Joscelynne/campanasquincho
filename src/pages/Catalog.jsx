@@ -16,9 +16,7 @@ const Catalog = () => {
       <Hero />
       <section id="productos" className="container catalog-layout">
         <div className="catalog-header" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '2rem' }}>
-          <p style={{ color: 'var(--color-text-muted)', fontSize: '0.875rem' }}>
-            Mostrando <strong style={{ color: 'var(--color-text-light)' }}>6</strong> de <strong style={{ color: 'var(--color-text-light)' }}>48</strong> productos
-          </p>
+          <h2 style={{ color: 'var(--color-primary)', fontSize: '2.5rem', fontWeight: 'bold' }}>Nuestros productos</h2>
         </div>
         <ProductGrid />
       </section>

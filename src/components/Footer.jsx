@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { SITE, getWhatsAppUrl } from '../config/siteConfig';
 
 const Footer = () => {
   return (
@@ -30,6 +31,14 @@ const Footer = () => {
             <li><Link to="/sobre-nosotros">Sobre Nosotros</Link></li>
             <li><Link to="/diseno-fabricacion">Diseño y Fabricación</Link></li>
             <li><Link to="/politica-envios">Política de Envíos</Link></li>
+          </ul>
+        </div>
+        <div className="footer-col">
+          <h4 className="footer-title">Contacto</h4>
+          <ul className="footer-links">
+            <li><a href={`mailto:${SITE.email}`}>{SITE.email}</a></li>
+            <li><a href={`tel:${SITE.whatsappNumber}`}>{SITE.phone}</a></li>
+            <li><a href={getWhatsAppUrl('Hola, quiero cotizar una campana para quincho')} target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
           </ul>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { getWhatsAppUrl } from '../config/siteConfig';
 
 const serviceBlocks = [
   {
@@ -17,8 +18,8 @@ const serviceBlocks = [
       }
     ],
     images: [
-      'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=600'
+      '/proyecto1.webp',
+      '/proyecto2.webp'
     ],
     align: 'left' // Text left, Image right
   },
@@ -38,7 +39,7 @@ const serviceBlocks = [
       }
     ],
     images: [
-      'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=800' // Single large portrait image
+      '/proyecto4.webp' // Single large portrait image
     ],
     align: 'right' // Text right, Image left
   },
@@ -59,8 +60,8 @@ const serviceBlocks = [
     ],
     buttonText: 'Quiero Cotizar',
     images: [
-      'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1504307651254-35680f356f58?auto=format&fit=crop&q=80&w=600'
+      '/proyecto5.webp',
+      '/proyecto6.webp'
     ],
     align: 'left'
   }
@@ -90,12 +91,12 @@ const ServiceBlock = ({ data, index }) => {
   const isTextLeft = data.align === 'left';
 
   return (
-    <div 
+    <div
       ref={ref}
       className={`service-block-row ${isTextLeft ? '' : 'reverse'}`}
     >
       {/* Columna de Texto */}
-      <div 
+      <div
         className="service-text-col"
         style={{
           opacity: isVisible ? 1 : 0,
@@ -108,7 +109,7 @@ const ServiceBlock = ({ data, index }) => {
             <span key={i} style={{ color: i > 0 ? 'var(--color-primary)' : 'inherit' }}>{word} </span>
           ))}
         </h3>
-        
+
         <div className="service-list">
           {data.services.map((svc, i) => (
             <div key={i} className="service-item" style={{
@@ -126,16 +127,22 @@ const ServiceBlock = ({ data, index }) => {
             </div>
           ))}
         </div>
-        
+
         {data.buttonText && (
-          <a href="#contacto" className="btn-primary" style={{ marginTop: '2rem', display: 'inline-block' }}>
+          <a
+            href={getWhatsAppUrl('Hola, quiero cotizar una campana para quincho')}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+            style={{ marginTop: '2rem', display: 'inline-block' }}
+          >
             {data.buttonText}
           </a>
         )}
       </div>
 
       {/* Columna de Imágenes */}
-      <div 
+      <div
         className="service-img-col"
         style={{
           opacity: isVisible ? 1 : 0,
@@ -160,10 +167,10 @@ const ServiceBlock = ({ data, index }) => {
 
 const Services = () => {
   return (
-    <section 
+    <section
       id="servicios"
-      style={{ 
-        padding: '8rem 0', 
+      style={{
+        padding: '8rem 0',
         backgroundColor: 'var(--color-bg-base)',
         borderTop: '1px solid rgba(255,255,255,0.03)',
         overflow: 'hidden'
@@ -250,7 +257,7 @@ const Services = () => {
 
           /* Imagen Única Grande */
           .img-single {
-            border-radius: 1rem;
+            border-radius: 0.25rem;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
             border: 1px solid rgba(255,255,255,0.05);
@@ -274,7 +281,7 @@ const Services = () => {
             width: 70%;
             height: 350px;
             object-fit: cover;
-            border-radius: 1rem;
+            border-radius: 0.25rem;
             box-shadow: 0 15px 30px rgba(0,0,0,0.4);
             position: absolute;
             top: 0;
@@ -286,7 +293,7 @@ const Services = () => {
             width: 60%;
             height: 300px;
             object-fit: cover;
-            border-radius: 1rem;
+            border-radius: 0.25rem;
             box-shadow: 0 25px 50px rgba(0,0,0,0.6);
             position: absolute;
             bottom: 0;
@@ -312,7 +319,7 @@ const Services = () => {
 
       <div className="service-container">
         {serviceBlocks.map((block, index) => (
-           <ServiceBlock key={block.id} data={block} index={index} />
+          <ServiceBlock key={block.id} data={block} index={index} />
         ))}
       </div>
     </section>
